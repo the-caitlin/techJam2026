@@ -18,11 +18,10 @@ func run_glitch_sequence(next_scene: String) -> void:
 	overlay.color = Color(0, 0, 0, 1)
 	overlay.set_anchors_preset(Control.PRESET_FULL_RECT)
 	overlay.MOUSE_FILTER_IGNORE
-	
+	add_child(overlay)
 	error_container = Control.new()
 	error_container.set_anchors_preset(Control.PRESET_FULL_RECT)
-	
-	error_container 
+	add_child(error_container)
 	# Phase 1: error popups
 	await _show_errors()
 	# Phase 2: screen glitch

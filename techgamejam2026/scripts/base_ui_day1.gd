@@ -11,6 +11,8 @@ const ItemSlotScene  := preload("res://scenes/base UI/item_slot.tscn")
 @export var starting_recipes: Array[Resource] = []
 @export var next_scene: String = "res://scenes/days/day2.tscn"
 
+@onready var glitch_screen: CanvasLayer = $"/root/GlitchScreen"
+
 const ITEM_SIZE := Vector2(80, 80)
 var _app_spawned := false
 
@@ -107,7 +109,8 @@ func _spawn_app() -> void:
 	tween.tween_property(app_icon, "scale", Vector2(1.0, 1.0), 0.4).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 
 func _on_app_clicked() -> void:
-	GlitchScreen.run_glitch_sequence(next_scene)
+	glitch_screen.show()
+	glitch_screen.run_glitch_sequence(next_scene)
 
 func spawn_item(item_data: ItemData, pos: Vector2) -> void:
 	var item: WorldItem = WorldItemScene.instantiate()

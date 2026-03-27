@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://jxyough6mvkg"]
+[gd_scene load_steps=13 format=3 uid="uid://jxyough6mvkg"]
 
 [ext_resource type="Script" uid="uid://cu4jxb4gn0i15" path="res://scripts/base_ui_day1.gd" id="1_gqrj5"]
 [ext_resource type="Script" uid="uid://38j82dwmv6t5" path="res://scripts/ItemData.gd" id="2_kvffx"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cuvd5j4csh02q" path="res://assets/background.png" id="9_vp0v4"]
 [ext_resource type="PackedScene" uid="uid://clmiehkrxfe6a" path="res://scenes/base UI/rosetta.tscn" id="10_j3jdi"]
 [ext_resource type="PackedScene" uid="uid://m0vtgwbr8jy0" path="res://scenes/days/appIcon.tscn" id="11_4wpdn"]
+[ext_resource type="PackedScene" uid="uid://dcxheflimctss" path="res://scenes/menus/GlitchScreen.tscn" id="12_kvffx"]
 
 [node name="Day1" type="Node2D"]
 
@@ -113,3 +114,5 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 mouse_filter = 1
+
+[node name="GlitchScreen" parent="." instance=ExtResource("12_kvffx")]
