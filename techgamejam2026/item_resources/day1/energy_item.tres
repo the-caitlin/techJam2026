@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://ce4yvetr7nlo0"]
+
+[ext_resource type="Texture2D" uid="uid://bdq04ub7d3pdh" path="res://icon.svg" id="1_brrvv"]
+[ext_resource type="Script" uid="uid://38j82dwmv6t5" path="res://scripts/ItemData.gd" id="2_0y5i1"]
+
+[resource]
+script = ExtResource("2_0y5i1")
+name = "energy"
+icon = ExtResource("1_brrvv")
+metadata/_custom_type_script = "uid://38j82dwmv6t5"

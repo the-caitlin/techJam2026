@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="RecipeData" load_steps=5 format=3 uid="uid://dwqfng76pvlvq"]
+
+[ext_resource type="Script" uid="uid://dctuotl1oongd" path="res://scripts/recipe_data.gd" id="1_b5bk5"]
+[ext_resource type="Resource" uid="uid://o0r2xgynyo5w" path="res://item_resources/day1/circle_item.tres" id="1_ev52l"]
+[ext_resource type="Resource" uid="uid://c0kkdaonaoljb" path="res://item_resources/day1/wind_item.tres" id="2_l7ou3"]
+[ext_resource type="Resource" uid="uid://df8qbu1enmenl" path="res://item_resources/day1/tornado_item.tres" id="3_aabqg"]
+
+[resource]
+script = ExtResource("1_b5bk5")
+ingredient_a = ExtResource("1_ev52l")
+ingredient_b = ExtResource("2_l7ou3")
+result = ExtResource("3_aabqg")
+metadata/_custom_type_script = "uid://dctuotl1oongd"
