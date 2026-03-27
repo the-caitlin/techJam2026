@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://clmiehkrxfe6a"]
 
 [ext_resource type="Script" uid="uid://3dys672ucinn" path="res://scripts/rosetta.gd" id="1_qhn31"]
-[ext_resource type="Texture2D" uid="uid://bdq04ub7d3pdh" path="res://icon.svg" id="2_ugywn"]
+[ext_resource type="Texture2D" uid="uid://bdq04ub7d3pdh" path="res://assets/icon.svg" id="2_ugywn"]
 
 [node name="Rosetta" type="Control"]
 custom_minimum_size = Vector2(150, 200)

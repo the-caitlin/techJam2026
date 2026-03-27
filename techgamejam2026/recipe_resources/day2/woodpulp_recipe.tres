@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="RecipeData" load_steps=5 format=3 uid="uid://b1ujy3flep3cx"]
+
+[ext_resource type="Script" uid="uid://dctuotl1oongd" path="res://scripts/recipe_data.gd" id="1_7dfx7"]
+[ext_resource type="Resource" uid="uid://286754ii5ukv" path="res://item_resources/day2/wood_item.tres" id="1_lkpcg"]
+[ext_resource type="Resource" uid="uid://cciomalp8pjwi" path="res://item_resources/day2/water_item.tres" id="2_urrmg"]
+[ext_resource type="Resource" uid="uid://okvrospunx1x" path="res://item_resources/day2/woodpulp_item.tres" id="3_jai3d"]
+
+[resource]
+script = ExtResource("1_7dfx7")
+ingredient_a = ExtResource("1_lkpcg")
+ingredient_b = ExtResource("2_urrmg")
+result = ExtResource("3_jai3d")
+discovery_dialogue = ""
+metadata/_custom_type_script = "uid://dctuotl1oongd"

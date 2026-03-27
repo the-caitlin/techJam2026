@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="RecipeData" load_steps=5 format=3 uid="uid://bbe5hvoxo3r01"]
+
+[ext_resource type="Script" uid="uid://dctuotl1oongd" path="res://scripts/recipe_data.gd" id="1_qd6ui"]
+[ext_resource type="Resource" uid="uid://mc1as1b1hwd" path="res://item_resources/day2/charcoal_item.tres" id="1_rr8lb"]
+[ext_resource type="Resource" uid="uid://cciomalp8pjwi" path="res://item_resources/day2/water_item.tres" id="2_5myk4"]
+[ext_resource type="Resource" uid="uid://bofvjqn2sncor" path="res://item_resources/day2/ink_item.tres" id="3_mylox"]
+
+[resource]
+script = ExtResource("1_qd6ui")
+ingredient_a = ExtResource("1_rr8lb")
+ingredient_b = ExtResource("2_5myk4")
+result = ExtResource("3_mylox")
+discovery_dialogue = ""
+metadata/_custom_type_script = "uid://dctuotl1oongd"

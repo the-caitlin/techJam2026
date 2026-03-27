@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://okvrospunx1x"]
+
+[ext_resource type="Script" uid="uid://38j82dwmv6t5" path="res://scripts/ItemData.gd" id="1_7ld6g"]
+[ext_resource type="Texture2D" uid="uid://bdq04ub7d3pdh" path="res://assets/icon.svg" id="1_msjn6"]
+
+[resource]
+script = ExtResource("1_7ld6g")
+name = "wood pulp"
+icon = ExtResource("1_msjn6")
+metadata/_custom_type_script = "uid://38j82dwmv6t5"
