@@ -10,14 +10,24 @@ const ERROR_MESSAGES := [
 	"FATAL: Stack overflow in existence_handler.gd",
 	"ERROR: File 'tomorrow.day' is corrupted",
 ]
+var overlay
+var error_container 
 
 func run_glitch_sequence(next_scene: String) -> void:
+	overlay = ColorRect.new()
+	overlay.color = Color(0, 0, 0, 1)
+	overlay.set_anchors_preset(Control.PRESET_FULL_RECT)
+	overlay.MOUSE_FILTER_IGNORE
+	
+	error_container = Control.new()
+	error_container.set_anchors_preset(Control.PRESET_FULL_RECT)
+	
+	error_container 
 	# Phase 1: error popups
 	await _show_errors()
 	# Phase 2: screen glitch
 	await _glitch_effect()
 	# Phase 3: cut to black and change scene
-	var overlay = GlitchScreen.get_node("Overlay")
 	overlay.modulate.a = 1.0
 	overlay.mouse_filter = Control.MOUSE_FILTER_STOP
 	await get_tree().create_timer(0.3).timeout
@@ -55,10 +65,10 @@ func _spawn_error_popup(message: String) -> void:
 	label.add_theme_color_override("font_color", Color.RED)
 	label.add_theme_font_size_override("font_size", 14)
 	margin.add_child(label)
-	GlitchScreen.get_tree().root.get_node("ErrorContainer").add_child(popup)
+	
+	error_container.add_child(popup)
 
 func _glitch_effect() -> void:
-	var overlay = GlitchScreen.get_node("Overlay")
 	# Flash the overlay rapidly
 	var flashes := 8
 	for i in range(flashes):
@@ -68,6 +78,5 @@ func _glitch_effect() -> void:
 	overlay.color = Color.BLACK
 
 func _clear_errors() -> void:
-	var error_container = GlitchScreen.get_node("ErrorContainer")
 	for child in error_container.get_children():
 		child.queue_free()
