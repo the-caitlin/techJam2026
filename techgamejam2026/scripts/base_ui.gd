@@ -1,7 +1,7 @@
 extends Control
 
-const WorldItemScene := preload("res://scenes/world_item.tscn")
-const ItemSlotScene  := preload("res://scenes/item_slot.tscn")
+const WorldItemScene := preload("res://scenes/base UI/world_item.tscn")
+const ItemSlotScene  := preload("res://scenes/base UI/item_slot.tscn")
 const ITEM_SIZE := Vector2(80, 80)
 
 @onready var item_list: VBoxContainer = %ItemList

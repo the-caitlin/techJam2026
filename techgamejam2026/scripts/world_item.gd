@@ -2,7 +2,7 @@ class_name WorldItem
 extends PanelContainer
 
 const ITEM_SIZE := Vector2(80, 80)
-const WorldItemScene := preload("res://scenes/world_item.tscn")
+const WorldItemScene := preload("res://scenes/base UI/world_item.tscn")
 
 @onready var icon: TextureRect = %ItemIcon
 @onready var label: Label = %ItemLabel

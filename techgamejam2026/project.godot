@@ -11,12 +11,14 @@ config_version=5
 [application]
 
 config/name="TechGameJam2026"
+run/main_scene="uid://p6r3qe37a1sd"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 RecipeManager="*res://scripts/recipe_manager.gd"
+Transition="*res://scripts/transition.gd"
 
 [display]
 

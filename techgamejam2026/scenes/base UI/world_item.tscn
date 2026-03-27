@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://cqep7fhem7ela"]
 
-[ext_resource type="Script" uid="uid://bxo8jp27d8h36" path="res://scripts/world_item.gd" id="1_8r7n1"]
+[ext_resource type="Script" uid="uid://bxo8jp27d8h36" path="res://scripts/world_item.gd" id="1_sc7le"]
 
 [node name="WorldItem" type="PanelContainer"]
 custom_minimum_size = Vector2(80, 80)
-script = ExtResource("1_8r7n1")
+script = ExtResource("1_sc7le")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2

@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://dp2ovkxrdmku1" path="res://recipe_resources/day1/energy_recipe.tres" id="6_4ou8l"]
 [ext_resource type="Resource" uid="uid://bty6wsc28ot3y" path="res://recipe_resources/day1/sun_recipe.tres" id="7_iw8uj"]
 [ext_resource type="Resource" uid="uid://dwqfng76pvlvq" path="res://recipe_resources/day1/tornado_recipe.tres" id="8_sgi52"]
-[ext_resource type="PackedScene" uid="uid://clmiehkrxfe6a" path="res://scenes/rosetta.tscn" id="9_gpre3"]
+[ext_resource type="PackedScene" uid="uid://clmiehkrxfe6a" path="res://scenes/base UI/rosetta.tscn" id="9_gpre3"]
 [ext_resource type="Texture2D" uid="uid://cuvd5j4csh02q" path="res://assets/background.png" id="9_ui567"]
 
 [node name="MainUI" type="Node2D"]
