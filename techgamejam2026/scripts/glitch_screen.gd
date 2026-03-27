@@ -1,14 +1,12 @@
 extends CanvasLayer
 
 const ERROR_MESSAGES := [
-	"FATAL ERROR: memory_core.dll not found",
+	"ERROR: app.exe not found",
 	"WARNING: Unexpected data corruption at 0x4F2A",
-	"ERROR: reality.exe has stopped responding",
-	"CRITICAL: Infinite loop detected in time_stream",
-	"ERROR: Cannot allocate memory for consciousness",
-	"WARNING: Physics engine returning NaN",
-	"FATAL: Stack overflow in existence_handler.gd",
-	"ERROR: File 'tomorrow.day' is corrupted",
+	"ERROR: unauthorized access to app.exe",
+	"CRITICAL: leave now",
+	"ERROR: Cannot allocate memory",
+	"ERROR: You aren't supposed to be here",
 ]
 var overlay
 var error_container 
@@ -36,10 +34,8 @@ func run_glitch_sequence(next_scene: String) -> void:
 	_clear_errors()
 
 func _show_errors() -> void:
-	var messages := ERROR_MESSAGES.duplicate()
-	messages.shuffle()
-	for i in range(5):
-		_spawn_error_popup(messages[i])
+	for i in range(6):
+		_spawn_error_popup(ERROR_MESSAGES[i])
 		await get_tree().create_timer(randf_range(0.3, 0.7)).timeout
 	await get_tree().create_timer(1.0).timeout
 
@@ -47,8 +43,8 @@ func _spawn_error_popup(message: String) -> void:
 	var popup := PanelContainer.new()
 	popup.set_anchors_preset(Control.PRESET_CENTER)
 	popup.position = Vector2(
-		randf_range(100, 1600),
-		randf_range(100, 800)
+		randf_range(-500, 200),
+		randf_range(-400, 300)
 	)
 	popup.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
@@ -62,7 +58,7 @@ func _spawn_error_popup(message: String) -> void:
 	var label := Label.new()
 	label.text = message
 	label.add_theme_color_override("font_color", Color.RED)
-	label.add_theme_font_size_override("font_size", 14)
+	label.add_theme_font_size_override("font_size", 32)
 	margin.add_child(label)
 	
 	error_container.add_child(popup)
