@@ -1,0 +1,94 @@
+[gd_scene load_steps=11 format=3 uid="uid://doh1b0jmlag37"]
+
+[ext_resource type="Script" uid="uid://bdwrerpomp12t" path="res://scripts/base_ui.gd" id="1_ffdxr"]
+[ext_resource type="Script" uid="uid://38j82dwmv6t5" path="res://scripts/ItemData.gd" id="2_gpre3"]
+[ext_resource type="Resource" uid="uid://o0r2xgynyo5w" path="res://item_resources/day1/circle_item.tres" id="3_ui567"]
+[ext_resource type="Resource" uid="uid://bmbybx85hfp4n" path="res://item_resources/day1/light_item.tres" id="4_c4s3y"]
+[ext_resource type="Resource" uid="uid://c0kkdaonaoljb" path="res://item_resources/day1/wind_item.tres" id="5_uvmgo"]
+[ext_resource type="Resource" uid="uid://dp2ovkxrdmku1" path="res://recipe_resources/day1/energy_recipe.tres" id="6_4ou8l"]
+[ext_resource type="Resource" uid="uid://bty6wsc28ot3y" path="res://recipe_resources/day1/sun_recipe.tres" id="7_iw8uj"]
+[ext_resource type="Resource" uid="uid://dwqfng76pvlvq" path="res://recipe_resources/day1/tornado_recipe.tres" id="8_sgi52"]
+[ext_resource type="PackedScene" uid="uid://clmiehkrxfe6a" path="res://scenes/rosetta.tscn" id="9_gpre3"]
+[ext_resource type="Texture2D" uid="uid://cuvd5j4csh02q" path="res://assets/background.png" id="9_ui567"]
+
+[node name="MainUI" type="Node2D"]
+
+[node name="BaseUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ffdxr")
+available_items = Array[ExtResource("2_gpre3")]([ExtResource("3_ui567"), ExtResource("4_c4s3y"), ExtResource("5_uvmgo")])
+starting_recipes = Array[Resource]([ExtResource("6_4ou8l"), ExtResource("7_iw8uj"), ExtResource("8_sgi52")])
+
+[node name="Background" type="TextureRect" parent="BaseUI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("9_ui567")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="UI_Overlay" type="CanvasLayer" parent="BaseUI"]
+
+[node name="Sidebar" type="PanelContainer" parent="BaseUI/UI_Overlay"]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -370.0
+offset_right = -20.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BaseUI/UI_Overlay/Sidebar"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 9
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BaseUI/UI_Overlay/Sidebar/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Title" type="Label" parent="BaseUI/UI_Overlay/Sidebar/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Items"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="BaseUI/UI_Overlay/Sidebar/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ItemList" type="VBoxContainer" parent="BaseUI/UI_Overlay/Sidebar/MarginContainer/VBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="BaseUI/UI_Overlay"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -200.0
+offset_right = 150.0
+grow_vertical = 0
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_bottom = 130
+
+[node name="Rosetta" parent="BaseUI/UI_Overlay/MarginContainer" instance=ExtResource("9_gpre3")]
+unique_name_in_owner = true
+layout_mode = 2

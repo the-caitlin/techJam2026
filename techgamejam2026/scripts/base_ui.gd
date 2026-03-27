@@ -5,6 +5,7 @@ const ItemSlotScene  := preload("res://scenes/item_slot.tscn")
 const ITEM_SIZE := Vector2(80, 80)
 
 @onready var item_list: VBoxContainer = %ItemList
+@onready var rosetta: Rosetta = %Rosetta
 
 @export var available_items: Array[ItemData] = []
 @export var starting_recipes: Array[Resource] = []
@@ -12,6 +13,10 @@ const ITEM_SIZE := Vector2(80, 80)
 func _ready() -> void:
 	set_anchors_preset(Control.PRESET_FULL_RECT)
 	size = get_viewport_rect().size
+	var bg := %Background
+	bg.set_anchors_preset(Control.PRESET_FULL_RECT)
+	bg.size = size
+	
 	mouse_filter = Control.MOUSE_FILTER_PASS
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	_register_recipes()
@@ -29,8 +34,7 @@ func _register_recipes() -> void:
 	for recipe in starting_recipes:
 		var r := recipe as RecipeData
 		if r:
-			RecipeManager.register_recipe(r.ingredient_a, r.ingredient_b, r.result)
-
+			RecipeManager.register_recipe(r)
 #sidebar drag and drop 
 
 func _can_drop_data(_at_position: Vector2, dropped) -> bool:
@@ -70,11 +74,17 @@ func _combine(a: WorldItem, b: WorldItem) -> void:
 	var result: ItemData = RecipeManager.try_combine(a.data, b.data)
 	if result:
 		var spawn_pos := b.global_position
+		# Find the recipe to get its dialogue
+		var dialogue := RecipeManager._get_recipe_dialogue(a.data, b.data)
 		a.queue_free()
 		b.queue_free()
 		call_deferred("spawn_item", result, spawn_pos)
+		if dialogue != "":
+			rosetta.show_dialogue(dialogue)
+		else:
+			rosetta.show_dialogue("Ooh! You made " + result.name + "!")
 	else:
-		pass
+		rosetta.show_dialogue("Hmm, that doesn't seem to work...")
 
 func spawn_item(item_data: ItemData, pos: Vector2) -> void:
 	var item: WorldItem = WorldItemScene.instantiate()
