@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dmg3djy8jpyo2"]
+[gd_scene load_steps=3 format=3 uid="uid://bc4psaujrkwe6"]
 
 [ext_resource type="Texture2D" uid="uid://cvpvln6wqufoo" path="res://assets/cat.jpg" id="1_g70mv"]
-[ext_resource type="Script" uid="uid://ofh2oyidqe83" path="res://scenes/base UI/sprite_2d.gd" id="2_rk3dq"]
+[ext_resource type="Script" path="res://scenes/base UI/sprite_2d.gd" id="2_rk3dq"]
 
 [node name="Crusor" type="Control"]
 layout_mode = 3
