@@ -17,8 +17,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-RecipeManager="*res://scripts/recipe_manager.gd"
 Transition="*res://scripts/transition.gd"
+GlitchScreen="*res://scripts/glitch_screen.gd"
+RecipeManager="*res://scripts/recipe_manager.gd"
 
 [display]
 

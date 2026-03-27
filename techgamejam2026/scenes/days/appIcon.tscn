@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://m0vtgwbr8jy0"]
+
+[ext_resource type="Script" uid="uid://bji166j871px3" path="res://scripts/app_icon.gd" id="1_808jj"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_c5j8f"]
+
+[node name="AppIcon" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_808jj")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="IconTexture" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_c5j8f")
+
+[node name="IconLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "app.exe"

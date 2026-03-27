@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcxheflimctss"]
+
+[ext_resource type="Script" uid="uid://p7m36tvjxjg8" path="res://scripts/glitch_screen.gd" id="1_tjuo3"]
+
+[node name="GlitchScreen" type="CanvasLayer"]
+layer = 20
+script = ExtResource("1_tjuo3")

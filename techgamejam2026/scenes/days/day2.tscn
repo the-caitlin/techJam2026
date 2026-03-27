@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://p0jvpq6u2vre"]
-
-[ext_resource type="PackedScene" uid="uid://doh1b0jmlag37" path="res://scenes/base UI/mainUI.tscn" id="1_lcfd1"]
-
-[node name="Day2" type="Node2D"]
-
-[node name="MainUI" parent="." instance=ExtResource("1_lcfd1")]
-position = Vector2(-2, 0)
