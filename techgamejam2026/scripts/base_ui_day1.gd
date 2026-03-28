@@ -19,8 +19,6 @@ var _app_spawned := false
 func _ready() -> void:
 	set_anchors_preset(Control.PRESET_FULL_RECT)
 	size = get_viewport_rect().size
-	mouse_filter = Control.MOUSE_FILTER_PASS
-	process_mode = Node.PROCESS_MODE_ALWAYS
 	var bg := %Background
 	bg.set_anchors_preset(Control.PRESET_FULL_RECT)
 	bg.size = size
@@ -28,6 +26,10 @@ func _ready() -> void:
 	_build_sidebar()
 	app_icon.hide()
 	app_icon.clicked.connect(_on_app_clicked)
+	
+	await rosetta.intro_dialogue()
+	mouse_filter = Control.MOUSE_FILTER_PASS
+	process_mode = Node.PROCESS_MODE_ALWAYS
 
 func _build_sidebar() -> void:
 	for item in available_items:
@@ -107,6 +109,7 @@ func _spawn_app() -> void:
 	tween.tween_property(app_icon, "scale", Vector2(1.0, 1.0), 0.4).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 
 func _on_app_clicked() -> void:
+	rosetta.hide()
 	glitch_screen.show()
 	glitch_screen.run_glitch_sequence(next_scene)
 
