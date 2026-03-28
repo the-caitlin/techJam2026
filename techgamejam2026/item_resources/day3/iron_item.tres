@@ -1,10 +1,15 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cs4c5elkeloos"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://cs4c5elkeloos"]
 
-[ext_resource type="Texture2D" uid="uid://bdq04ub7d3pdh" path="res://assets/icon.svg" id="1_2lddr"]
 [ext_resource type="Script" uid="uid://38j82dwmv6t5" path="res://scripts/ItemData.gd" id="1_5lwl5"]
+
+[sub_resource type="Gradient" id="Gradient_5lwl5"]
+offsets = PackedFloat32Array(0, 0.0183486)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2lddr"]
+gradient = SubResource("Gradient_5lwl5")
 
 [resource]
 script = ExtResource("1_5lwl5")
 name = "iron"
-icon = ExtResource("1_2lddr")
+icon = SubResource("GradientTexture1D_2lddr")
 metadata/_custom_type_script = "uid://38j82dwmv6t5"

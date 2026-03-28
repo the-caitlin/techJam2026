@@ -1,10 +1,17 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://drrseugxikhjv"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://drrseugxikhjv"]
 
 [ext_resource type="Script" uid="uid://38j82dwmv6t5" path="res://scripts/ItemData.gd" id="1_c02qi"]
-[ext_resource type="Texture2D" uid="uid://bdq04ub7d3pdh" path="res://assets/icon.svg" id="1_dd55j"]
+
+[sub_resource type="Gradient" id="Gradient_c02qi"]
+offsets = PackedFloat32Array(0, 0.043578, 0.5, 0.867925, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.833896, 0.833896, 0.833896, 1, 0.583202, 0.395004, 0.104698, 1, 0.259174, 0.259174, 0.259174, 1, 0, 0, 0, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dd55j"]
+gradient = SubResource("Gradient_c02qi")
 
 [resource]
 script = ExtResource("1_c02qi")
 name = "furnace"
-icon = ExtResource("1_dd55j")
+icon = SubResource("GradientTexture2D_dd55j")
 metadata/_custom_type_script = "uid://38j82dwmv6t5"

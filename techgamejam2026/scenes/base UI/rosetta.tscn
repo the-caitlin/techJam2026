@@ -654,7 +654,7 @@ anchor_bottom = 1.0
 offset_top = -128.0
 offset_right = 128.0
 grow_vertical = 0
-mouse_filter = 2
+mouse_filter = 1
 script = ExtResource("1_qhn31")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
@@ -671,9 +671,11 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 pivot_offset = Vector2(0, -160)
+mouse_filter = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="DialogueBubble"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="DialogueLabel" type="Label" parent="DialogueBubble/MarginContainer"]
 layout_mode = 2
