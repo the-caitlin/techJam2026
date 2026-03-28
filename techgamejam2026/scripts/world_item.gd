@@ -5,7 +5,7 @@ const ITEM_SIZE := Vector2(80, 80)
 const WorldItemScene := preload("res://scenes/base UI/world_item.tscn")
 
 @onready var icon: TextureRect = %ItemIcon
-@onready var label: Label = %ItemLabel
+#@onready var label: Label = %ItemLabel
 
 var data: ItemData = null
 var _dragging := false
@@ -19,7 +19,7 @@ func _ready() -> void:
 
 func setup(item_data: ItemData) -> void:
 	data = item_data
-	label.text = data.name
+	#label.text = data.name
 	if data.icon:
 		icon.texture = data.icon
 	icon.visible = data.icon != null
