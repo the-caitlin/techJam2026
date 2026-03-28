@@ -20,11 +20,11 @@ func run_glitch_sequence(next_scene: String) -> void:
 	error_container = Control.new()
 	error_container.set_anchors_preset(Control.PRESET_FULL_RECT)
 	add_child(error_container)
-	# Phase 1: error popups
+	# error popups
 	await _show_errors()
-	# Phase 2: screen glitch
+	# screen glitch
 	await _glitch_effect()
-	# Phase 3: cut to black and change scene
+	# cut to black and change scene
 	overlay.modulate.a = 1.0
 	overlay.mouse_filter = Control.MOUSE_FILTER_STOP
 	await get_tree().create_timer(0.3).timeout
