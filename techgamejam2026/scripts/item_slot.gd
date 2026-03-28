@@ -2,13 +2,11 @@ class_name ItemSlot
 extends PanelContainer
 
 @onready var icon: TextureRect = %ItemIcon
-@onready var label: Label = %ItemLabel
 
 var data: ItemData = null
 
 func setup(item_data: ItemData) -> void:
 	data = item_data
-	label.text = data.name
 	if data.icon:
 		icon.texture = data.icon
 	icon.visible = data.icon != null
@@ -26,8 +24,6 @@ func _make_ghost() -> Control:
 	if data.icon:
 		var tex := TextureRect.new()
 		tex.texture = data.icon
-		tex.custom_minimum_size = Vector2(32, 32)
-		tex.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 		hbox.add_child(tex)
 
 	var lbl := Label.new()
