@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5gobq27t78nh"
-path="res://.godot/imported/Lightbulb Icon.PNG-488571c8817dffa1d6c6e21d91a8d3b0.ctex"
+uid="uid://0l3e345v4yoq"
+path="res://.godot/imported/ObjectMenu.png-aa560f853318fe66039b1f3e83a22395.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Lightbulb Icon.PNG"
-dest_files=["res://.godot/imported/Lightbulb Icon.PNG-488571c8817dffa1d6c6e21d91a8d3b0.ctex"]
+source_file="res://assets/ObjectMenu.png"
+dest_files=["res://.godot/imported/ObjectMenu.png-aa560f853318fe66039b1f3e83a22395.ctex"]
 
 [params]
 

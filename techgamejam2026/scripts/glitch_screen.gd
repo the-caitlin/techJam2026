@@ -75,3 +75,6 @@ func _glitch_effect() -> void:
 func _clear_errors() -> void:
 	for child in error_container.get_children():
 		child.queue_free()
+
+func run_end_scene(next_scene: String):
+	get_tree().change_scene_to_file(next_scene)
