@@ -12,6 +12,7 @@ const ITEM_SIZE := Vector2(80, 80)
 @export var starting_recipes: Array[Resource] = []
 @export var key_item_name: String = "iron key"  
 @export var next_scene_key: String = "res://scenes/menus/main_menu.tscn"
+@export var next_scene_power: String = "res://scenes/menus/main_menu.tscn" #temp, end screen?
 
 var _key_crafted := false
 
@@ -136,11 +137,6 @@ func _on_key_used_on_app() -> void:
 	rosetta.show_dialogue("The key fits... let's see what's inside.")
 	await get_tree().create_timer(1.5).timeout
 	GlitchScreen.run_end_scene(next_scene_key)
-
-func _on_power_pressed() -> void:
-	rosetta.show_dialogue("Shutting down...")
-	await get_tree().create_timer(1.0).timeout
-	Transition.fade_to_scene(next_scene_key)
 
 func _on_app_clicked() -> void:
 	if _key_crafted:

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bml8ah7ioduiu"]
 
 [ext_resource type="Script" uid="uid://38j82dwmv6t5" path="res://scripts/ItemData.gd" id="1_gxdb4"]
-[ext_resource type="Texture2D" uid="uid://bdq04ub7d3pdh" path="res://assets/icon.svg" id="1_v7oll"]
+[ext_resource type="Texture2D" uid="uid://bikpml1hi3ial" path="res://assets/items/TreeObject.png" id="1_v7oll"]
 
 [resource]
 script = ExtResource("1_gxdb4")
