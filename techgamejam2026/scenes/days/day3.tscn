@@ -8,7 +8,6 @@
 [ext_resource type="Resource" uid="uid://ed4d2hitpl5p" path="res://item_resources/day3/hammer_item.tres" id="6_caoqt"]
 [ext_resource type="Resource" uid="uid://bq2iqqerfdjmb" path="res://recipe_resources/day3/iron_key_recipe.tres" id="7_hcy84"]
 [ext_resource type="Resource" uid="uid://di11pckjmly6q" path="res://recipe_resources/day3/iron_on_anvil_recipe.tres" id="8_vd2dx"]
-[ext_resource type="Texture2D" uid="uid://cuvd5j4csh02q" path="res://assets/background.png" id="9_8dn7b"]
 [ext_resource type="Resource" uid="uid://daiip5r3mu31l" path="res://recipe_resources/day3/melted_iron_recipe.tres" id="9_33mlh"]
 [ext_resource type="Texture2D" uid="uid://0l3e345v4yoq" path="res://assets/ObjectMenu.png" id="10_1arki"]
 [ext_resource type="Resource" uid="uid://o0r2xgynyo5w" path="res://item_resources/day1/circle_item.tres" id="10_q532s"]
@@ -33,6 +32,7 @@
 [ext_resource type="Resource" uid="uid://lcao2jaln0rn" path="res://recipe_resources/day2/wood_recipe.tres" id="27_x78qa"]
 [ext_resource type="Resource" uid="uid://wegncsyrpsau" path="res://recipe_resources/extended/storm_recipe.tres" id="28_tttpo"]
 [ext_resource type="Resource" uid="uid://c1p6bkdebikox" path="res://recipe_resources/extended/tree_recipe.tres" id="29_yxf3p"]
+[ext_resource type="Texture2D" uid="uid://3ich1q05ha2t" path="res://backgrounds/Day3Background.png" id="30_a54jl"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4pcem"]
 
@@ -57,7 +57,7 @@ layout_mode = 1
 offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 2
-texture = ExtResource("9_8dn7b")
+texture = ExtResource("30_a54jl")
 expand_mode = 5
 stretch_mode = 6
 
@@ -126,6 +126,7 @@ theme_override_constants/margin_bottom = 130
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 2
+is_sad = true
 
 [node name="MarginContainer" type="MarginContainer" parent="BaseUI"]
 layout_mode = 1

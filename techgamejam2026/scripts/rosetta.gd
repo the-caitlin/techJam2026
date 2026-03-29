@@ -5,6 +5,8 @@ extends Control
 @onready var bubble: PanelContainer = %DialogueBubble
 @onready var dialogue_label: Label = %DialogueLabel
 
+@export var is_sad: bool = false
+
 # Idle lines for random ambient dialogue
 const IDLE_LINES: Array[String] = [
 	"Hi, I'm Rosetta! The browser assistant designed to help you navigate this page.",
@@ -62,7 +64,9 @@ func show_dialogue(text: String, duration: float = 4.0) -> void:
 	bubble.show()
 	var random = randi_range(1, 10)
 	
-	if random % 2 == 0: 
+	if is_sad and sprite.sprite_frames and sprite.sprite_frames.has_animation(("sad")): 
+		sprite.play("sad")
+	elif random % 2 == 0: 
 		if sprite.sprite_frames and sprite.sprite_frames.has_animation("talking"):
 			sprite.play("talking")
 	else: 
