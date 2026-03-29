@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bmbybx85hfp4n"]
 
-[ext_resource type="Texture2D" uid="uid://bdq04ub7d3pdh" path="res://assets/icon.svg" id="1_3h5wb"]
+[ext_resource type="Texture2D" uid="uid://5gobq27t78nh" path="res://assets/items/Lightbulb Icon.PNG" id="1_3h5wb"]
 [ext_resource type="Script" uid="uid://38j82dwmv6t5" path="res://scripts/ItemData.gd" id="2_5yw52"]
 
 [resource]
