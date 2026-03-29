@@ -10,7 +10,7 @@ const ItemSlotScene  := preload("res://scenes/base UI/item_slot.tscn")
 @export var available_items: Array[ItemData] = []
 @export var starting_recipes: Array[Resource] = []
 @export var next_scene: String = "res://scenes/days/daytwo.tscn"
-
+@onready var sidebar: MarginContainer = %MarginContainer2
 @onready var glitch_screen: CanvasLayer = $"/root/GlitchScreen"
 
 const ITEM_SIZE := Vector2(80, 80)
@@ -110,6 +110,7 @@ func _spawn_app() -> void:
 
 func _on_app_clicked() -> void:
 	rosetta.hide()
+	sidebar.hide()
 	glitch_screen.show()
 	glitch_screen.run_glitch_sequence(next_scene)
 
