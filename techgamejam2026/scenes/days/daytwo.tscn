@@ -9,7 +9,6 @@
 [ext_resource type="Resource" uid="uid://jwtj1fke3bc4" path="res://recipe_resources/day2/charcoal_recipe.tres" id="7_nf0ni"]
 [ext_resource type="Resource" uid="uid://bg2wn78qv13d5" path="res://recipe_resources/day2/drawnkey_recipe.tres" id="8_ic672"]
 [ext_resource type="Resource" uid="uid://uc07tb0n0cag" path="res://recipe_resources/day2/id_recipe.tres" id="9_ovj0r"]
-[ext_resource type="Texture2D" uid="uid://cuvd5j4csh02q" path="res://assets/background.png" id="10_2iwfx"]
 [ext_resource type="Resource" uid="uid://bbe5hvoxo3r01" path="res://recipe_resources/day2/ink_recipe.tres" id="10_oxln5"]
 [ext_resource type="Texture2D" uid="uid://0l3e345v4yoq" path="res://assets/ObjectMenu.png" id="11_erqat"]
 [ext_resource type="Resource" uid="uid://bsg7827hkv0pk" path="res://recipe_resources/day2/paper_recipe.tres" id="11_kaqvp"]
@@ -21,6 +20,7 @@
 [ext_resource type="Resource" uid="uid://lcao2jaln0rn" path="res://recipe_resources/day2/wood_recipe.tres" id="15_si7se"]
 [ext_resource type="Resource" uid="uid://ctrtklp8s21yq" path="res://item_resources/day2/pen2_item.tres" id="16_eydo2"]
 [ext_resource type="Resource" uid="uid://xr7v7iigeony" path="res://item_resources/day2/paper2_item.tres" id="17_7sij3"]
+[ext_resource type="Texture2D" uid="uid://cdm1weo8rrbyo" path="res://backgrounds/Day2Background.png" id="18_1oagv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4pcem"]
 
@@ -45,7 +45,7 @@ layout_mode = 1
 offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 2
-texture = ExtResource("10_2iwfx")
+texture = ExtResource("18_1oagv")
 expand_mode = 5
 stretch_mode = 6
 
