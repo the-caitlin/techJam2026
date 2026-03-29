@@ -18,6 +18,8 @@
 
 [node name="Day1" type="Node2D"]
 
+[node name="GlitchScreen" parent="." instance=ExtResource("12_kvffx")]
+
 [node name="BaseUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
@@ -122,5 +124,3 @@ theme_override_constants/margin_top = 400
 [node name="AppIcon" parent="BaseUI/MarginContainer" instance=ExtResource("11_4wpdn")]
 unique_name_in_owner = true
 layout_mode = 2
-
-[node name="GlitchScreen" parent="." instance=ExtResource("12_kvffx")]

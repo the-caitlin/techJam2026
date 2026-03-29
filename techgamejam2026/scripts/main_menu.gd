@@ -10,7 +10,7 @@ func _ready() -> void:
 	credits_menu.hide()
 
 func _on_play_pressed() -> void:
-	Transition.fade_to_scene("res://scenes/days/day1.tscn")
+	Transition.fade_to_day(1, "res://scenes/days/day1.tscn")
 
 func _on_settings_pressed() -> void:
 	settings_menu.show()
