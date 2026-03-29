@@ -6,6 +6,7 @@
 
 [node name="AppIcon" type="Control"]
 layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_808jj")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
