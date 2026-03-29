@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://otoi7en1odym"]
+
+[ext_resource type="Script" uid="uid://bfhpl31mhs0og" path="res://scenes/base UI/ending_scene.gd" id="1_tk430"]
+[ext_resource type="Script" uid="uid://du6iiitfp3iib" path="res://scenes/base UI/control.gd" id="2_5squo"]
+
+[node name="EndingScene" type="Node2D"]
+script = ExtResource("1_tk430")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_5squo")
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+offset_right = 1917.0
+offset_bottom = 1078.0
+color = Color(0, 0, 0, 1)
+
+[node name="Thanks" type="Label" parent="Control/ColorRect"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_right = 1878.0
+offset_bottom = 1079.0
+text = "Thanks for playing"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Help" type="Label" parent="Control/ColorRect"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 1912.0
+offset_bottom = 1079.0
+text = "HELP
+ME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/ColorRect"]
+root_node = NodePath("../../..")
+
+[node name="Timer" type="Timer" parent="Control/ColorRect"]
