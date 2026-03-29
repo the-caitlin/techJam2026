@@ -13,7 +13,7 @@ const ITEM_SIZE := Vector2(80, 80)
 
 @export var pen2_item: ItemData = null
 @export var paper2_item: ItemData = null
-@export var next_scene: String = "res://scenes/day3.tscn"
+@export var next_scene: String = "res://scenes/days/day3.tscn"
 
 enum Day2State {
 	CRAFTING,        
@@ -26,12 +26,12 @@ var _state: Day2State = Day2State.CRAFTING
 func _ready() -> void:
 	set_anchors_preset(Control.PRESET_FULL_RECT)
 	size = get_viewport_rect().size
+	
 	mouse_filter = Control.MOUSE_FILTER_PASS
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	RecipeManager.reset()
 	_register_recipes()
 	_build_sidebar()
-	app_icon.hide()
 
 func _build_sidebar() -> void:
 	for item in available_items:
@@ -52,6 +52,17 @@ func _can_drop_data(_at_position: Vector2, dropped) -> bool:
 
 func _drop_data(at_position: Vector2, dropped) -> void:
 	if dropped is ItemData:
+		if _state == Day2State.ID_CRAFTED and dropped.name.to_lower() == "drawn key":
+			var app_rect := Rect2(app_icon.global_position, app_icon.size)
+			if app_rect.has_point(at_position):
+				# Spawn it briefly then trigger cinematic
+				var temp: WorldItem = WorldItemScene.instantiate()
+				add_child(temp)
+				temp.setup(dropped)
+				temp.global_position = at_position
+				_on_drawn_key_used_on_app(temp)
+				return
+
 		var target := _find_item_at_position(at_position)
 		if target:
 			var temp: WorldItem = WorldItemScene.instantiate()
@@ -63,6 +74,11 @@ func _drop_data(at_position: Vector2, dropped) -> void:
 			spawn_item(dropped, at_position)
 
 func check_combine_or_place(item: WorldItem) -> void:
+	if _state == Day2State.ID_CRAFTED and item.data.name.to_lower() == "paper key":
+		var app_rect := Rect2(app_icon.global_position, app_icon.size)
+		if app_rect.intersects(Rect2(item.global_position, item.size)):
+			_on_drawn_key_used_on_app(item)
+			return
 	var target := _find_overlapping_item(item)
 	if target:
 		_combine(item, target)
@@ -118,20 +134,47 @@ func _check_state(result: ItemData) -> void:
 
 func _on_id_crafted() -> void:
 	_state = Day2State.ID_CRAFTED
-	# Wait for dialogue to finish then clear world items and repopulate sidebar
-	await get_tree().create_timer(4.0).timeout
-	_clear_all_world_items()
-	await get_tree().create_timer(0.3).timeout
+	#_clear_all_world_items()
+	await rosetta.say("My name's not actually rosetta...")
+	await rosetta.say("It's Max. Max Fuller. Nice to meet you.") 
+	await rosetta.say("Hey, by the way, would you mind trying to help me open that file? I appear to have lost my key.")
 	_repopulate_sidebar_phase2()
-	rosetta.show_dialogue("My name's not actually rosetta...")
-	rosetta.show_dialogue("It's Max. Max Fuller. Nice to meet you.") 
-	rosetta.show_dialogue("Hey, by the way, would you mind trying to help me open that file? I appear to have lost my key.")
+	await get_tree().create_timer(0.3).timeout
 
 func _on_drawn_key_crafted() -> void:
+	_state = Day2State.ID_CRAFTED
+	# Just show the app icon, wait for player to use key on it
+	app_icon.show()
+	app_icon.scale = Vector2.ZERO
+	var tween := create_tween()
+	tween.tween_property(app_icon, "scale", Vector2(1.0, 1.0), 0.4).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+
+func _on_drawn_key_used_on_app(key_item: WorldItem) -> void:
 	_state = Day2State.KEY_CRAFTED
-	rosetta.show_dialogue("What doesn't fit?? There must be a way, let me try!")
-	await get_tree().create_timer(3.0).timeout
-	_rosetta_touches_key()
+	# Disable all input during cinematic
+	mouse_filter = Control.MOUSE_FILTER_STOP
+	await rosetta.say("What?? It doesn't fit...")
+	await rosetta.say("There must be a way, let me try!")
+
+	# Move key toward Rosetta
+	var key_tween := create_tween()
+	key_tween.tween_property(key_item, "global_position", rosetta.global_position + Vector2(20, 0), 0.8).set_trans(Tween.TRANS_SINE)
+	await key_tween.finished
+
+	# Small pause
+	await get_tree().create_timer(0.3).timeout
+
+	# Move key and Rosetta toward app icon together
+	var app_pos := app_icon.global_position
+	var move_tween := create_tween().set_parallel(true)
+	move_tween.tween_property(key_item, "global_position", app_pos, 0.8).set_trans(Tween.TRANS_SINE)
+	move_tween.tween_property(rosetta, "global_position", app_pos, 0.8).set_trans(Tween.TRANS_SINE)
+	await move_tween.finished
+
+	await get_tree().create_timer(0.3).timeout
+
+	# Cut to black and transition
+	Transition.fade_to_scene(next_scene, 1.0)
 
 func _rosetta_touches_key() -> void:
 	# Clear remaining world items
