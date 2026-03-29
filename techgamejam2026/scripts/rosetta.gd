@@ -72,6 +72,10 @@ func show_dialogue(text: String, duration: float = 4.0) -> void:
 	var tween := create_tween()
 	tween.tween_property(bubble, "modulate:a", 1.0, 0.2)
 
+func say(text: String) -> void:
+	show_dialogue(text)
+	await get_tree().create_timer(_dialogue_duration).timeout
+
 func hide_dialogue() -> void:
 	if sprite.sprite_frames and sprite.sprite_frames.has_animation("idle"):
 		sprite.play("idle")
