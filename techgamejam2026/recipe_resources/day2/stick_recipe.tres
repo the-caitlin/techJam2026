@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="RecipeData" load_steps=5 format=3 uid="uid://dxl1nttmhbrjk"]
+
+[ext_resource type="Script" uid="uid://dctuotl1oongd" path="res://scripts/recipe_data.gd" id="1_2gbo8"]
+[ext_resource type="Resource" uid="uid://286754ii5ukv" path="res://item_resources/day2/wood_item.tres" id="1_ge3jq"]
+[ext_resource type="Resource" uid="uid://bd0rr6dmj4tui" path="res://item_resources/day2/sharp_item.tres" id="2_w2nam"]
+[ext_resource type="Resource" uid="uid://cwrxx0l4a1vmo" path="res://item_resources/day2/stick_item.tres" id="3_qm5ne"]
+
+[resource]
+script = ExtResource("1_2gbo8")
+ingredient_a = ExtResource("1_ge3jq")
+ingredient_b = ExtResource("2_w2nam")
+result = ExtResource("3_qm5ne")
+discovery_dialogue = ""
+metadata/_custom_type_script = "uid://dctuotl1oongd"

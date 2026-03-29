@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://b2nney1hsdpew"]
+
+[ext_resource type="Texture2D" uid="uid://bdq04ub7d3pdh" path="res://assets/icon.svg" id="1_ch8ir"]
+[ext_resource type="Script" uid="uid://38j82dwmv6t5" path="res://scripts/ItemData.gd" id="1_e0ko3"]
+
+[resource]
+script = ExtResource("1_e0ko3")
+name = "paper key"
+icon = ExtResource("1_ch8ir")
+metadata/_custom_type_script = "uid://38j82dwmv6t5"
