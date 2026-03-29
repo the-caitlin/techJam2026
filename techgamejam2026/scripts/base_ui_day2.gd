@@ -177,7 +177,7 @@ func _on_drawn_key_used_on_app(key_item: WorldItem) -> void:
 	await get_tree().create_timer(0.3).timeout
 
 	# Cut to black and transition
-	Transition.fade_to_scene(next_scene, 1.0)
+	Transition.fade_to_day(3, next_scene)
 
 func _rosetta_touches_key() -> void:
 	# Clear remaining world items
