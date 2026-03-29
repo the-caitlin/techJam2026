@@ -1,15 +1,10 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://jd0hq82bneqo"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://jd0hq82bneqo"]
 
 [ext_resource type="Script" uid="uid://38j82dwmv6t5" path="res://scripts/ItemData.gd" id="1_gupwh"]
-
-[sub_resource type="Gradient" id="Gradient_gupwh"]
-offsets = PackedFloat32Array(0.995413, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_tf8wu"]
-gradient = SubResource("Gradient_gupwh")
+[ext_resource type="Texture2D" uid="uid://sxj385u03atg" path="res://assets/items/AnvilObject.png" id="1_tf8wu"]
 
 [resource]
 script = ExtResource("1_gupwh")
 name = "anvil"
-icon = SubResource("GradientTexture2D_tf8wu")
+icon = ExtResource("1_tf8wu")
 metadata/_custom_type_script = "uid://38j82dwmv6t5"

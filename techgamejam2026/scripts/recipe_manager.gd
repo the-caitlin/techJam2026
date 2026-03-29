@@ -32,8 +32,8 @@ func get_all_result_names() -> Array[String]:
 
 func all_discovered() -> bool:
 	var all_results := get_all_result_names()
-	for name in all_results:
-		if name not in discovered_items:
+	for res_name in all_results:
+		if res_name not in discovered_items:
 			return false
 	return true
 

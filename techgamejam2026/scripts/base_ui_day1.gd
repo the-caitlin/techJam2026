@@ -9,7 +9,7 @@ const ItemSlotScene  := preload("res://scenes/base UI/item_slot.tscn")
 
 @export var available_items: Array[ItemData] = []
 @export var starting_recipes: Array[Resource] = []
-@export var next_scene: String = "res://scenes/days/day2.tscn"
+@export var next_scene: String = "res://scenes/days/daytwo.tscn"
 
 @onready var glitch_screen: CanvasLayer = $"/root/GlitchScreen"
 
