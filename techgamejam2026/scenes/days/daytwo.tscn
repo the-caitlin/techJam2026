@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cnnysomqdp36j"]
+[gd_scene load_steps=23 format=3 uid="uid://dfh2h1c5ohdf2"]
 
 [ext_resource type="Script" uid="uid://c4hy6fytyuie3" path="res://scripts/base_ui_day2.gd" id="1_1oagv"]
 [ext_resource type="Script" uid="uid://38j82dwmv6t5" path="res://scripts/ItemData.gd" id="2_nhu2d"]

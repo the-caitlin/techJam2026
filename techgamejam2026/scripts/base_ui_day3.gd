@@ -161,7 +161,7 @@ func _on_key_used_on_app() -> void:
 	rosetta.show_dialogue("The key fits... let's see what's inside.")
 	await get_tree().create_timer(1.5).timeout
 	# Crash the game
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://scenes/base UI/ending_scene.tscn")
 
 func _unlock_all_items() -> void:
 	# Clear sidebar

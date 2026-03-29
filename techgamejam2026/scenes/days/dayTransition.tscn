@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddqnunmghba13"]
+[gd_scene load_steps=7 format=3 uid="uid://ddqnunmghba13"]
 
 [ext_resource type="Script" uid="uid://slup1roxwnk3" path="res://scripts/day_transition.gd" id="1_1mcyo"]
 [ext_resource type="Texture2D" uid="uid://da38sicihr42" path="res://assets/1 Day1TransitionScreen.png" id="2_6wg5o"]
+[ext_resource type="Texture2D" uid="uid://dm2b5abw6dsos" path="res://assets/1 Day2TransitionScreen.png" id="3_1i6ds"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1mcyo"]
 bg_color = Color(0.929412, 0.964706, 0.839216, 1)
@@ -27,7 +28,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_1mcyo")
-day_backgrounds = Array[Texture2D]([ExtResource("2_6wg5o"), null, null])
+day_backgrounds = Array[Texture2D]([ExtResource("2_6wg5o"), ExtResource("3_1i6ds"), null])
 
 [node name="Background" type="TextureRect" parent="."]
 unique_name_in_owner = true

@@ -25,7 +25,7 @@
 [ext_resource type="Resource" uid="uid://bbe5hvoxo3r01" path="res://recipe_resources/day2/ink_recipe.tres" id="22_7wkfl"]
 [ext_resource type="Resource" uid="uid://bsg7827hkv0pk" path="res://recipe_resources/day2/paper_recipe.tres" id="23_fujeq"]
 [ext_resource type="Resource" uid="uid://dyjv0f0fj31ee" path="res://recipe_resources/day2/pen_recipe.tres" id="24_imsbd"]
-[ext_resource type="Resource" path="res://recipe_resources/day2/stick_recipe.tres" id="25_jd46i"]
+[ext_resource type="Resource" uid="uid://dxl1nttmhbrjk" path="res://recipe_resources/day2/stick_recipe.tres" id="25_jd46i"]
 [ext_resource type="Resource" uid="uid://b1ujy3flep3cx" path="res://recipe_resources/day2/woodpulp_recipe.tres" id="26_2alg6"]
 [ext_resource type="Resource" uid="uid://dqkqr16cewajp" path="res://recipe_resources/extended/furnace_recipe.tres" id="26_a54jl"]
 [ext_resource type="Resource" uid="uid://btirnfty8tggg" path="res://recipe_resources/extended/sharp_recipe.tres" id="27_o6oly"]
