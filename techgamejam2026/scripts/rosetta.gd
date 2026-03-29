@@ -1,9 +1,9 @@
 class_name Rosetta
 extends Control
 
-@onready var sprite: AnimatedSprite2D = $Sprite2D
-@onready var bubble: PanelContainer = $DialogueBubble
-@onready var dialogue_label: Label = $DialogueBubble/MarginContainer/DialogueLabel
+@onready var sprite: AnimatedSprite2D = %roset
+@onready var bubble: PanelContainer = %DialogueBubble
+@onready var dialogue_label: Label = %DialogueLabel
 
 # Idle lines for random ambient dialogue
 const IDLE_LINES: Array[String] = [

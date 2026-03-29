@@ -1,10 +1,13 @@
-[gd_scene load_steps=95 format=3 uid="uid://clmiehkrxfe6a"]
+[gd_scene load_steps=97 format=3 uid="uid://clmiehkrxfe6a"]
 
 [ext_resource type="Script" uid="uid://3dys672ucinn" path="res://scripts/rosetta.gd" id="1_qhn31"]
 [ext_resource type="Texture2D" uid="uid://cmwrxxktqsro6" path="res://assets/rosetta/Idle Rosetta 15fps.png" id="2_vko8n"]
 [ext_resource type="Texture2D" uid="uid://co00ru20jlgjm" path="res://assets/rosetta/Rosetta Spin shock 30fps.png" id="3_17c6c"]
 [ext_resource type="Texture2D" uid="uid://d1yin1hxurdbr" path="res://assets/rosetta/Rosetta 360 spin 15fps.png" id="4_yo3de"]
 [ext_resource type="Texture2D" uid="uid://ct02f2od6y1cm" path="res://assets/rosetta/Rosetta Talk 15fps.png" id="5_wynlc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vko8n"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n2hl0"]
 atlas = ExtResource("2_vko8n")
@@ -645,8 +648,20 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_17c6c"]
+bg_color = Color(0.929412, 0.964706, 0.839216, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.243137, 0.137255, 0.172549, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [node name="Rosetta" type="Control"]
-custom_minimum_size = Vector2(192, 192)
+custom_minimum_size = Vector2(192, 270)
 layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
@@ -657,7 +672,24 @@ grow_vertical = 0
 mouse_filter = 1
 script = ExtResource("1_qhn31")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -192.0
+offset_right = 192.0
+grow_vertical = 0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(192, 192)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vko8n")
+
+[node name="roset" type="AnimatedSprite2D" parent="MarginContainer/PanelContainer"]
+unique_name_in_owner = true
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_ky7b1")
 animation = &"idle"
@@ -665,17 +697,30 @@ frame = 13
 frame_progress = 0.264744
 centered = false
 
-[node name="DialogueBubble" type="PanelContainer" parent="."]
-visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-pivot_offset = Vector2(0, -160)
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 38.0
+offset_bottom = 58.0
 mouse_filter = 2
+theme_override_constants/margin_left = 35
+theme_override_constants/margin_right = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="DialogueBubble"]
+[node name="DialogueBubble" type="PanelContainer" parent="MarginContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 60)
 layout_mode = 2
 mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_17c6c")
 
-[node name="DialogueLabel" type="Label" parent="DialogueBubble/MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2/DialogueBubble"]
 layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+
+[node name="DialogueLabel" type="Label" parent="MarginContainer2/DialogueBubble/MarginContainer"]
+unique_name_in_owner = true
+self_modulate = Color(0.243137, 0.137255, 0.172549, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
