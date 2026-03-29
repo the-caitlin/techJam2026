@@ -11,8 +11,7 @@ const ITEM_SIZE := Vector2(80, 80)
 @export var available_items: Array[ItemData] = []
 @export var starting_recipes: Array[Resource] = []
 @export var key_item_name: String = "iron key"  
-@export var next_scene_key: String = "res://scenes/day4.tscn"
-@export var next_scene_power: String = "res://scenes/menus/main_menu.tscn" #temp, end screen?
+@export var next_scene_key: String = "res://scenes/menus/main_menu.tscn"
 
 var _key_crafted := false
 
@@ -49,11 +48,9 @@ func _can_drop_data(_at_position: Vector2, dropped) -> bool:
 func _drop_data(at_position: Vector2, dropped) -> void:
 	if dropped is ItemData:
 		if dropped.name.to_lower() == "hammer":
-			print("yay hammer")
 			var rosetta_rect := Rect2(rosetta.global_position, rosetta.size)
 			if rosetta_rect.has_point(at_position):
 				_on_hammer_on_rosetta(null) 
-				print("yay intersects")
 				return
 
 		var target := _find_item_at_position(at_position)
@@ -143,7 +140,7 @@ func _on_key_used_on_app() -> void:
 func _on_power_pressed() -> void:
 	rosetta.show_dialogue("Shutting down...")
 	await get_tree().create_timer(1.0).timeout
-	Transition.fade_to_scene(next_scene_power)
+	Transition.fade_to_scene(next_scene_key)
 
 func _on_app_clicked() -> void:
 	if _key_crafted:
@@ -158,4 +155,4 @@ func _on_hammer_on_rosetta(hammer: WorldItem) -> void:
 	await get_tree().create_timer(2.0).timeout
 	rosetta.show_dialogue("...")
 	await get_tree().create_timer(1.0).timeout
-	Transition.fade_to_scene(next_scene_power)
+	Transition.fade_to_scene(next_scene_key)
