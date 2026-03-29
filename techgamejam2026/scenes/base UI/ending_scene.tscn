@@ -1,10 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://otoi7en1odym"]
+[gd_scene load_steps=2 format=3 uid="uid://otoi7en1odym"]
 
-[ext_resource type="Script" uid="uid://bfhpl31mhs0og" path="res://scenes/base UI/ending_scene.gd" id="1_tk430"]
 [ext_resource type="Script" uid="uid://du6iiitfp3iib" path="res://scenes/base UI/control.gd" id="2_5squo"]
 
 [node name="EndingScene" type="Node2D"]
-script = ExtResource("1_tk430")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
