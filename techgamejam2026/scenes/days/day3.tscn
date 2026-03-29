@@ -1,6 +1,6 @@
 [gd_scene load_steps=35 format=3 uid="uid://b0jjkfb6wjodn"]
 
-[ext_resource type="Script" uid="uid://dsdg23ucdw682" path="res://scripts/base_ui_day3.gd" id="1_unkxo"]
+[ext_resource type="Script" path="res://scripts/base_ui_day3.gd" id="1_unkxo"]
 [ext_resource type="Script" uid="uid://38j82dwmv6t5" path="res://scripts/ItemData.gd" id="2_ovyv7"]
 [ext_resource type="Resource" uid="uid://cs4c5elkeloos" path="res://item_resources/day3/iron_item.tres" id="3_a4b06"]
 [ext_resource type="Resource" uid="uid://jd0hq82bneqo" path="res://item_resources/day3/anvil_item.tres" id="4_ovyv7"]
