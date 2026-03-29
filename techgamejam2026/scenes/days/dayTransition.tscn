@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ddqnunmghba13"]
 
-[ext_resource type="Script" path="res://scripts/day_transition.gd" id="1_1mcyo"]
+[ext_resource type="Script" uid="uid://slup1roxwnk3" path="res://scripts/day_transition.gd" id="1_1mcyo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1mcyo"]
 bg_color = Color(0.929412, 0.964706, 0.839216, 1)
