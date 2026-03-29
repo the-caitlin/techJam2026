@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://p6r3qe37a1sd"]
+[gd_scene load_steps=9 format=3 uid="uid://p6r3qe37a1sd"]
 
 [ext_resource type="Script" uid="uid://b11lvw1d6xif0" path="res://scripts/main_menu.gd" id="1_xqga4"]
 [ext_resource type="Texture2D" uid="uid://cuvd5j4csh02q" path="res://assets/background.png" id="2_6bivr"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://b3nq7ntwg46w4" path="res://assets/buttons/play2.png" id="4_1hnlc"]
 [ext_resource type="Texture2D" uid="uid://ctjqx5g1v6g0w" path="res://assets/buttons/credits1.png" id="5_50h1w"]
 [ext_resource type="Texture2D" uid="uid://b1jryler0ia5h" path="res://assets/buttons/credits2.png" id="6_euy4r"]
-[ext_resource type="PackedScene" uid="uid://dmg3djy8jpyo2" path="res://scenes/base UI/Crusor.tscn" id="9_50h1w"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -78,13 +77,6 @@ flat = true
 
 [node name="CreditsMenu" parent="." instance=ExtResource("3_6bivr")]
 layout_mode = 1
-
-[node name="Crusor" parent="." instance=ExtResource("9_50h1w")]
-layout_mode = 1
-offset_left = 527.0
-offset_top = 663.0
-offset_right = 527.0
-offset_bottom = 663.0
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_pressed"]

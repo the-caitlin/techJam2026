@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bhdenykgorvl6"]
+[gd_scene load_steps=5 format=3 uid="uid://bhdenykgorvl6"]
 
 [ext_resource type="Script" uid="uid://y3tjt5pacfxj" path="res://scripts/credits_menu.gd" id="1_due5w"]
 [ext_resource type="Texture2D" uid="uid://bevjm750vx8as" path="res://assets/buttons/credits.png" id="2_325oc"]
-[ext_resource type="PackedScene" uid="uid://dmg3djy8jpyo2" path="res://scenes/base UI/Crusor.tscn" id="2_536xp"]
 [ext_resource type="Texture2D" uid="uid://dggpt58ygctsr" path="res://assets/buttons/close1.png" id="3_325oc"]
 [ext_resource type="Texture2D" uid="uid://l3v1sqts2a51" path="res://assets/buttons/close2.png" id="4_wywfy"]
 
@@ -49,10 +48,5 @@ texture_hover = ExtResource("4_wywfy")
 texture_disabled = ExtResource("4_wywfy")
 texture_focused = ExtResource("4_wywfy")
 stretch_mode = 5
-
-[node name="Crusor" parent="." instance=ExtResource("2_536xp")]
-layout_mode = 1
-offset_left = 0.0
-offset_right = 0.0
 
 [connection signal="pressed" from="TextureRect/MarginContainer/CloseButton" to="." method="_on_close_pressed"]
