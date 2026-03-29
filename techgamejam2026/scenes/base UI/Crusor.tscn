@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://btaqnk3e48j5u"]
+[gd_scene load_steps=3 format=3 uid="uid://dmg3djy8jpyo2"]
 
-[ext_resource type="Texture2D" uid="uid://cvpvln6wqufoo" path="res://assets/cat.jpg" id="1_g70mv"]
-[ext_resource type="Script" path="res://scenes/base UI/sprite_2d.gd" id="2_rk3dq"]
+[ext_resource type="Texture2D" uid="uid://q22qf51muqs8" path="res://assets/CursorDefault.png" id="1_g70mv"]
+[ext_resource type="Script" uid="uid://ofh2oyidqe83" path="res://scenes/base UI/sprite_2d.gd" id="2_rk3dq"]
 
 [node name="Crusor" type="Control"]
 layout_mode = 3
@@ -14,7 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(108, 107)
-scale = Vector2(0.325, 0.305882)
+position = Vector2(160.4, 156.318)
+scale = Vector2(3.6, 3.38823)
 texture = ExtResource("1_g70mv")
 script = ExtResource("2_rk3dq")
