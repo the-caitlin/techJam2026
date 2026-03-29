@@ -1,15 +1,10 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://c1ighucxq74nb"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://c1ighucxq74nb"]
 
+[ext_resource type="Texture2D" uid="uid://br2w5hsveq3o4" path="res://assets/items_more/IronMeltedObject.png" id="1_m2sp1"]
 [ext_resource type="Script" uid="uid://38j82dwmv6t5" path="res://scripts/ItemData.gd" id="1_u4n4w"]
-
-[sub_resource type="Gradient" id="Gradient_u4n4w"]
-colors = PackedColorArray(0, 0, 0, 1, 1, 0, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_m2sp1"]
-gradient = SubResource("Gradient_u4n4w")
 
 [resource]
 script = ExtResource("1_u4n4w")
 name = "melted iron"
-icon = SubResource("GradientTexture2D_m2sp1")
+icon = ExtResource("1_m2sp1")
 metadata/_custom_type_script = "uid://38j82dwmv6t5"

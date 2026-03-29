@@ -1,15 +1,10 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://cda3ad8kweeb"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cda3ad8kweeb"]
 
 [ext_resource type="Script" uid="uid://38j82dwmv6t5" path="res://scripts/ItemData.gd" id="1_kguk6"]
-
-[sub_resource type="Gradient" id="Gradient_kguk6"]
-colors = PackedColorArray(0.458824, 0.372549, 0, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_tiyve"]
-gradient = SubResource("Gradient_kguk6")
+[ext_resource type="Texture2D" uid="uid://cblkjksflks5l" path="res://assets/items_more/KeyObject.png" id="1_tiyve"]
 
 [resource]
 script = ExtResource("1_kguk6")
 name = "iron key"
-icon = SubResource("GradientTexture2D_tiyve")
+icon = ExtResource("1_tiyve")
 metadata/_custom_type_script = "uid://38j82dwmv6t5"
