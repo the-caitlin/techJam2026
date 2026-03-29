@@ -2,13 +2,13 @@
 
 [ext_resource type="Resource" uid="uid://okvrospunx1x" path="res://item_resources/day2/woodpulp_item.tres" id="1_fmorn"]
 [ext_resource type="Script" uid="uid://dctuotl1oongd" path="res://scripts/recipe_data.gd" id="1_um14b"]
-[ext_resource type="Resource" uid="uid://bhh0hvjd233a3" path="res://item_resources/day2/fire_item.tres" id="2_14ubk"]
+[ext_resource type="Resource" uid="uid://sq6t266w1au6" path="res://item_resources/day2/paper_item.tres" id="3_2im7u"]
 [ext_resource type="Resource" uid="uid://upu242pprbd3" path="res://item_resources/day1/sun_item.tres" id="3_fmorn"]
 
 [resource]
 script = ExtResource("1_um14b")
 ingredient_a = ExtResource("1_fmorn")
-ingredient_b = ExtResource("2_14ubk")
-result = ExtResource("3_fmorn")
+ingredient_b = ExtResource("3_fmorn")
+result = ExtResource("3_2im7u")
 discovery_dialogue = ""
 metadata/_custom_type_script = "uid://dctuotl1oongd"

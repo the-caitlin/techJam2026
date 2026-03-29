@@ -1,12 +1,12 @@
 extends CanvasLayer
 
-const ERROR_MESSAGES := [
-	"ERROR: app.exe not found",
-	"WARNING: Unexpected data corruption at 0x4F2A",
-	"ERROR: unauthorized access to app.exe",
-	"CRITICAL: leave now",
-	"ERROR: Cannot allocate memory",
-	"ERROR: You aren't supposed to be here",
+var error_textures: Array[Texture2D] = [
+	preload("res://assets/errors/error1.png"),
+	preload("res://assets/errors/error2.png"),
+	preload("res://assets/errors/error3.png"),
+	preload("res://assets/errors/error4.png"),
+	preload("res://assets/errors/error5.png"),
+	preload("res://assets/errors/error6.png"),
 ]
 var overlay
 var error_container 
@@ -38,13 +38,29 @@ func run_glitch_sequence(next_scene: String) -> void:
 		child.queue_free()
 	
 	await get_tree().process_frame  
-	get_tree().change_scene_to_file(next_scene)
+	Transition.fade_to_day(2, next_scene)
 
 func _show_errors() -> void:
-	for i in range(6):
-		_spawn_error_popup(ERROR_MESSAGES[i])
+	var textures := error_textures.duplicate()
+	textures.shuffle()
+	for i in textures.size():
+		_spawn_error_image(textures[i])
 		await get_tree().create_timer(randf_range(0.3, 0.7)).timeout
 	await get_tree().create_timer(1.0).timeout
+
+func _spawn_error_image(texture: Texture2D) -> void:
+	var img := TextureRect.new()
+	img.texture = texture
+	img.custom_minimum_size = Vector2(500, 500)  
+	img.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	img.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	img.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	# Random position on screen
+	img.position = Vector2(
+		randf_range(50, 1400),
+		randf_range(100, 800)
+	)
+	error_container.add_child(img)
 
 func _spawn_error_popup(message: String) -> void:
 	var popup := PanelContainer.new()
