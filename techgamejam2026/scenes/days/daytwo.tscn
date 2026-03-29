@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cnnysomqdp36j"]
+[gd_scene load_steps=23 format=3 uid="uid://dfh2h1c5ohdf2"]
 
 [ext_resource type="Script" path="res://scripts/base_ui_day2.gd" id="1_1oagv"]
 [ext_resource type="Script" uid="uid://38j82dwmv6t5" path="res://scripts/ItemData.gd" id="2_nhu2d"]
@@ -6,7 +6,6 @@
 [ext_resource type="Resource" uid="uid://cciomalp8pjwi" path="res://item_resources/day2/water_item.tres" id="4_vaeud"]
 [ext_resource type="Resource" uid="uid://bml8ah7ioduiu" path="res://item_resources/day2/tree_item.tres" id="5_wlu5i"]
 [ext_resource type="Resource" uid="uid://bd0rr6dmj4tui" path="res://item_resources/day2/sharp_item.tres" id="6_0tk22"]
-[ext_resource type="Resource" uid="uid://upu242pprbd3" path="res://item_resources/day1/sun_item.tres" id="7_1mxmj"]
 [ext_resource type="Resource" uid="uid://jwtj1fke3bc4" path="res://recipe_resources/day2/charcoal_recipe.tres" id="7_nf0ni"]
 [ext_resource type="Resource" path="res://recipe_resources/day2/drawnkey_recipe.tres" id="8_ic672"]
 [ext_resource type="Resource" uid="uid://uc07tb0n0cag" path="res://recipe_resources/day2/id_recipe.tres" id="9_ovj0r"]
@@ -35,7 +34,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1oagv")
-available_items = Array[ExtResource("2_nhu2d")]([ExtResource("3_1mxmj"), ExtResource("4_vaeud"), ExtResource("5_wlu5i"), ExtResource("6_0tk22"), ExtResource("7_1mxmj")])
+available_items = Array[ExtResource("2_nhu2d")]([ExtResource("3_1mxmj"), ExtResource("4_vaeud"), ExtResource("5_wlu5i"), ExtResource("6_0tk22")])
 starting_recipes = Array[Resource]([ExtResource("7_nf0ni"), ExtResource("8_ic672"), ExtResource("9_ovj0r"), ExtResource("10_oxln5"), ExtResource("11_kaqvp"), ExtResource("12_1wgbg"), ExtResource("13_kpr3u"), ExtResource("14_s3yo1"), ExtResource("15_si7se")])
 pen2_item = ExtResource("16_eydo2")
 paper2_item = ExtResource("17_7sij3")
