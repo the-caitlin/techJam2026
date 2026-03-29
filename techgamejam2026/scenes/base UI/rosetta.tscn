@@ -1,8 +1,9 @@
-[gd_scene load_steps=97 format=3 uid="uid://clmiehkrxfe6a"]
+[gd_scene load_steps=103 format=3 uid="uid://clmiehkrxfe6a"]
 
 [ext_resource type="Script" uid="uid://3dys672ucinn" path="res://scripts/rosetta.gd" id="1_qhn31"]
 [ext_resource type="Texture2D" uid="uid://cmwrxxktqsro6" path="res://assets/rosetta/Idle Rosetta 15fps.png" id="2_vko8n"]
 [ext_resource type="Texture2D" uid="uid://co00ru20jlgjm" path="res://assets/rosetta/Rosetta Spin shock 30fps.png" id="3_17c6c"]
+[ext_resource type="Texture2D" uid="uid://bxm4kkc28bxsy" path="res://assets/Roseeta Talk Sad 15fps.png" id="3_yo3de"]
 [ext_resource type="Texture2D" uid="uid://d1yin1hxurdbr" path="res://assets/rosetta/Rosetta 360 spin 15fps.png" id="4_yo3de"]
 [ext_resource type="Texture2D" uid="uid://ct02f2od6y1cm" path="res://assets/rosetta/Rosetta Talk 15fps.png" id="5_wynlc"]
 
@@ -128,6 +129,26 @@ region = Rect2(256, 256, 64, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_aua64"]
 atlas = ExtResource("2_vko8n")
 region = Rect2(320, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wynlc"]
+atlas = ExtResource("3_yo3de")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ky7b1"]
+atlas = ExtResource("3_yo3de")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vgvj"]
+atlas = ExtResource("3_yo3de")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myjsw"]
+atlas = ExtResource("3_yo3de")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4g38f"]
+atlas = ExtResource("3_yo3de")
+region = Rect2(256, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jj32h"]
 atlas = ExtResource("3_17c6c")
@@ -460,6 +481,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_wynlc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ky7b1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vgvj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_myjsw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4g38f")
+}],
+"loop": true,
+"name": &"sad",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_jj32h")
 }, {
 "duration": 1.0,
@@ -692,9 +733,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_vko8n")
 unique_name_in_owner = true
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_ky7b1")
-animation = &"idle"
-frame = 13
-frame_progress = 0.264744
+animation = &"sad"
+frame_progress = 0.72081
 centered = false
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
