@@ -24,14 +24,17 @@ enum Day2State {
 var _state: Day2State = Day2State.CRAFTING
 
 func _ready() -> void:
+	for child in GlitchScreen.get_children():
+		print("  ", child.name, " : ", child.get_class(), " mouse_filter: ", child.get("mouse_filter"))
 	set_anchors_preset(Control.PRESET_FULL_RECT)
 	size = get_viewport_rect().size
-	
 	mouse_filter = Control.MOUSE_FILTER_PASS
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	RecipeManager.reset()
 	_register_recipes()
 	_build_sidebar()
+	print("Day2 mouse_filter: ", mouse_filter)
+	print("Day2 size: ", size)
 
 func _build_sidebar() -> void:
 	for item in available_items:

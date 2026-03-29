@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://df8qbu1enmenl"]
 
-[ext_resource type="Texture2D" uid="uid://bdq04ub7d3pdh" path="res://assets/icon.svg" id="1_h758v"]
+[ext_resource type="Texture2D" uid="uid://cowmkf5n0pub4" path="res://assets/items/TornadoObject.png" id="1_h758v"]
 [ext_resource type="Script" uid="uid://38j82dwmv6t5" path="res://scripts/ItemData.gd" id="2_krov7"]
 
 [resource]

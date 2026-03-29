@@ -15,23 +15,30 @@ func run_glitch_sequence(next_scene: String) -> void:
 	overlay = ColorRect.new()
 	overlay.color = Color(0, 0, 0, 1)
 	overlay.set_anchors_preset(Control.PRESET_FULL_RECT)
-	overlay.MOUSE_FILTER_IGNORE
+	overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE  
 	add_child(overlay)
 	error_container = Control.new()
 	error_container.set_anchors_preset(Control.PRESET_FULL_RECT)
 	add_child(error_container)
-	# error popups
+
 	await _show_errors()
-	# screen glitch
 	await _glitch_effect()
-	# cut to black and change scene
+
+	# Cut to black
 	overlay.modulate.a = 1.0
 	overlay.mouse_filter = Control.MOUSE_FILTER_STOP
 	await get_tree().create_timer(0.3).timeout
-	get_tree().change_scene_to_file(next_scene)
-	overlay.modulate.a = 0.0
-	overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	
+	#clean before switch
 	_clear_errors()
+	overlay.queue_free()
+	overlay = null
+	
+	for child in get_children():
+		child.queue_free()
+	
+	await get_tree().process_frame  
+	get_tree().change_scene_to_file(next_scene)
 
 func _show_errors() -> void:
 	for i in range(6):

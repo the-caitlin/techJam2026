@@ -1,8 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://m0vtgwbr8jy0"]
+[gd_scene load_steps=4 format=3 uid="uid://m0vtgwbr8jy0"]
 
 [ext_resource type="Script" uid="uid://bji166j871px3" path="res://scripts/app_icon.gd" id="1_808jj"]
+[ext_resource type="Texture2D" uid="uid://nx3d0hidmbsk" path="res://assets/items/FileObject.png" id="2_2fomv"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_c5j8f"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_auqde"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="AppIcon" type="Control"]
 layout_mode = 3
@@ -14,6 +16,7 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_auqde")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
@@ -24,8 +27,9 @@ layout_mode = 2
 [node name="IconTexture" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = SubResource("PlaceholderTexture2D_c5j8f")
+texture = ExtResource("2_2fomv")
 
 [node name="IconLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "app.exe"
+horizontal_alignment = 1
