@@ -14,6 +14,9 @@ const ITEM_SIZE := Vector2(80, 80)
 @export var next_scene_key: String = "res://scenes/menus/main_menu.tscn"
 @export var next_scene_power: String = "res://scenes/menus/main_menu.tscn" #temp, end screen?
 
+@export var all_items: Array[ItemData] = []        
+@export var all_recipes: Array[Resource] = []      
+
 var _key_crafted := false
 
 func _ready() -> void:
@@ -133,11 +136,6 @@ func _on_key_crafted() -> void:
 
 # Ends
 
-func _on_key_used_on_app() -> void:
-	rosetta.show_dialogue("The key fits... let's see what's inside.")
-	await get_tree().create_timer(1.5).timeout
-	GlitchScreen.run_end_scene(next_scene_key)
-
 func _on_app_clicked() -> void:
 	if _key_crafted:
 		rosetta.show_dialogue("Maybe I need the key to open this...")
@@ -151,4 +149,31 @@ func _on_hammer_on_rosetta(hammer: WorldItem) -> void:
 	await get_tree().create_timer(2.0).timeout
 	rosetta.show_dialogue("...")
 	await get_tree().create_timer(1.0).timeout
-	Transition.fade_to_scene(next_scene_key)
+	# Rosetta disappears, game continues with no companion
+	var tween := create_tween()
+	tween.tween_property(rosetta, "modulate:a", 0.0, 0.5)
+	tween.tween_callback(rosetta.hide)
+	# Unlock all items and recipes in the sidebar
+	app_icon.hide()
+	_unlock_all_items()
+
+func _on_key_used_on_app() -> void:
+	rosetta.show_dialogue("The key fits... let's see what's inside.")
+	await get_tree().create_timer(1.5).timeout
+	# Crash the game
+	get_tree().quit()
+
+func _unlock_all_items() -> void:
+	# Clear sidebar
+	for child in item_list.get_children():
+		child.queue_free()
+	# Register all recipes
+	for recipe in all_recipes:
+		var r := recipe as RecipeData
+		if r:
+			RecipeManager.register_recipe(r)
+	# Populate sidebar with all items
+	for item in all_items:
+		var slot: ItemSlot = ItemSlotScene.instantiate()
+		item_list.add_child(slot)
+		slot.setup(item)

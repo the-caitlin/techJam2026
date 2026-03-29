@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="RecipeData" load_steps=5 format=3 uid="uid://btirnfty8tggg"]
+
+[ext_resource type="Resource" uid="uid://cwrxx0l4a1vmo" path="res://item_resources/day2/stick_item.tres" id="1_qhnc0"]
+[ext_resource type="Script" uid="uid://dctuotl1oongd" path="res://scripts/recipe_data.gd" id="1_xrerc"]
+[ext_resource type="Resource" uid="uid://c1ighucxq74nb" path="res://item_resources/day3/meltediron_item.tres" id="2_jsxar"]
+[ext_resource type="Resource" uid="uid://bd0rr6dmj4tui" path="res://item_resources/day2/sharp_item.tres" id="3_1p6n6"]
+
+[resource]
+script = ExtResource("1_xrerc")
+ingredient_a = ExtResource("1_qhnc0")
+ingredient_b = ExtResource("2_jsxar")
+result = ExtResource("3_1p6n6")
+discovery_dialogue = ""
+metadata/_custom_type_script = "uid://dctuotl1oongd"
