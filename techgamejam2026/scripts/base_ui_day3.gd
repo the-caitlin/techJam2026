@@ -151,4 +151,4 @@ func _on_hammer_on_rosetta(hammer: WorldItem) -> void:
 	await get_tree().create_timer(2.0).timeout
 	rosetta.show_dialogue("...")
 	await get_tree().create_timer(1.0).timeout
-	Transition.fade_to_scene(next_scene_power)
+	Transition.fade_to_scene(next_scene_key)

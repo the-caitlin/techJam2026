@@ -1,3 +1,24 @@
-[gd_scene format=3 uid="uid://d37pgkpxhbkff"]
+[gd_scene load_steps=3 format=3 uid="uid://d37pgkpxhbkff"]
+
+[ext_resource type="Texture2D" uid="uid://cuvd5j4csh02q" path="res://assets/background.png" id="1_rkfob"]
+[ext_resource type="PackedScene" uid="uid://clmiehkrxfe6a" path="res://scenes/base UI/rosetta.tscn" id="2_5eccs"]
 
 [node name="Day2" type="Node2D"]
+
+[node name="BaseUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="TextureRect" parent="BaseUI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_rkfob")
+
+[node name="Rosetta" parent="." instance=ExtResource("2_5eccs")]
+offset_left = 29.0
+offset_top = 796.0
+offset_right = 179.0
+offset_bottom = 996.0
