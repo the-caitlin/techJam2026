@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://p6r3qe37a1sd"]
+[gd_scene load_steps=9 format=3 uid="uid://p6r3qe37a1sd"]
 
 [ext_resource type="Script" uid="uid://b11lvw1d6xif0" path="res://scripts/main_menu.gd" id="1_xqga4"]
-[ext_resource type="PackedScene" uid="uid://hq7jjngg4vl3" path="res://scenes/menus/settings_menu.tscn" id="2_2o76q"]
 [ext_resource type="Texture2D" uid="uid://cuvd5j4csh02q" path="res://assets/background.png" id="2_6bivr"]
+[ext_resource type="Texture2D" uid="uid://dhgu3ghlqsow" path="res://assets/buttons/titlef.png" id="3_1hnlc"]
 [ext_resource type="PackedScene" uid="uid://bhdenykgorvl6" path="res://scenes/menus/credits_menu.tscn" id="3_6bivr"]
+[ext_resource type="Texture2D" uid="uid://vblllx4ewyvd" path="res://assets/buttons/play1.png" id="3_8r73w"]
+[ext_resource type="Texture2D" uid="uid://b3nq7ntwg46w4" path="res://assets/buttons/play2.png" id="4_1hnlc"]
+[ext_resource type="Texture2D" uid="uid://ctjqx5g1v6g0w" path="res://assets/buttons/credits1.png" id="5_50h1w"]
+[ext_resource type="Texture2D" uid="uid://b1jryler0ia5h" path="res://assets/buttons/credits2.png" id="6_euy4r"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -37,36 +41,43 @@ grow_vertical = 2
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="TitleLabel" type="Label" parent="VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_constants/margin_bottom = 100
 
-[node name="PlayButton" type="Button" parent="VBoxContainer"]
+[node name="TitleLabel" type="TextureRect" parent="VBoxContainer/MarginContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Play"
+texture = ExtResource("3_1hnlc")
 
-[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+[node name="PlayButton" type="TextureButton" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Settings"
+texture_normal = ExtResource("3_8r73w")
+texture_pressed = ExtResource("4_1hnlc")
+texture_hover = ExtResource("4_1hnlc")
+texture_disabled = ExtResource("3_8r73w")
+texture_focused = ExtResource("4_1hnlc")
+stretch_mode = 5
 
-[node name="CreditsButton" type="Button" parent="VBoxContainer"]
+[node name="CreditsButton" type="TextureButton" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Credits"
+texture_normal = ExtResource("5_50h1w")
+texture_pressed = ExtResource("6_euy4r")
+texture_hover = ExtResource("6_euy4r")
+texture_disabled = ExtResource("5_50h1w")
+texture_focused = ExtResource("6_euy4r")
+stretch_mode = 5
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Quit"
-
-[node name="SettingsMenu" parent="." instance=ExtResource("2_2o76q")]
-layout_mode = 1
+text = "quit"
+flat = true
 
 [node name="CreditsMenu" parent="." instance=ExtResource("3_6bivr")]
 layout_mode = 1
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_pressed"]
