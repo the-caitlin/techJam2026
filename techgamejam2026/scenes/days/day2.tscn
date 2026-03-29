@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://d37pgkpxhbkff"]
+[gd_scene load_steps=3 format=3 uid="uid://bew2kd58ukt6"]
 
 [ext_resource type="Texture2D" uid="uid://cuvd5j4csh02q" path="res://assets/background.png" id="1_rkfob"]
 [ext_resource type="PackedScene" uid="uid://clmiehkrxfe6a" path="res://scenes/base UI/rosetta.tscn" id="2_5eccs"]

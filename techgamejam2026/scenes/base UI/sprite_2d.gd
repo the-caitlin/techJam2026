@@ -5,10 +5,11 @@ func _ready() -> void:
 	z_index = 100
 	
 func _process(delta: float) -> void:
-	global_position = lerp(global_position, get_global_mouse_position(), 16.5*delta)
+	global_position = lerp(global_position, get_global_mouse_position(), 16.5 * delta)
 	
 	var desired_rotation: float = -12.5 if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) else 0.0
-	rotation_degrees = lerp(rotation_degrees, desired_rotation, 16.5*delta)
+	rotation_degrees = lerp(rotation_degrees, desired_rotation, 16.5 * delta)
 	
-	var desired_scale: Vector2 = Vector2(0.35, 0.35) if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) else Vector2(0.4, 0.4)
-	scale = lerp(scale, desired_scale, 16.5*delta)
+	var desired_scale: Vector2 = Vector2(2, 2) if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) else Vector2(2.2, 2.2)
+	scale = lerp(scale, desired_scale, 16.5 * delta)
+	
