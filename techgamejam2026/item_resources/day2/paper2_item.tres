@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://xr7v7iigeony"]
+
+[ext_resource type="Script" uid="uid://38j82dwmv6t5" path="res://scripts/ItemData.gd" id="1_hdyvv"]
+[ext_resource type="Texture2D" uid="uid://d4k6w00ie4rcc" path="res://assets/items/PaperIcon.PNG" id="1_kiwak"]
+
+[resource]
+script = ExtResource("1_hdyvv")
+name = "paper2"
+icon = ExtResource("1_kiwak")
+metadata/_custom_type_script = "uid://38j82dwmv6t5"
