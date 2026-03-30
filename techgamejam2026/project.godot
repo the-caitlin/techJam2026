@@ -32,3 +32,7 @@ mouse_cursor/custom_image="uid://13yrbvbx7wmy"
 [dotnet]
 
 project/assembly_name="TechGameJam2026"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

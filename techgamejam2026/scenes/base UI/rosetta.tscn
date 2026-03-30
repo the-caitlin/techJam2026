@@ -477,7 +477,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -497,7 +497,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"sad",
-"speed": 4.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -571,7 +571,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"spinn",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -666,7 +666,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"spinning",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -686,7 +686,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"talking",
-"speed": 5.0
+"speed": 15.0
 }]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_17c6c"]
@@ -734,7 +734,7 @@ unique_name_in_owner = true
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_ky7b1")
 animation = &"sad"
-frame_progress = 0.72081
+frame_progress = 0.944125
 centered = false
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]

@@ -1,7 +1,7 @@
 extends Control
 
 @onready var background: TextureRect = %Background
-@onready var continue_button: Button = %ContinueButton
+@onready var continue_button: TextureButton = %ContinueButton
 
 var _next_scene: String = ""
 
